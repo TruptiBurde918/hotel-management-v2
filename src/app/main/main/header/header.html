@@ -1,0 +1,30 @@
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+
+      <div class="flex items-center gap-2 cursor-pointer">
+        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+          <i class="fas fa-hotel text-xl"></i>
+        </div>
+        <span class="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">
+          Luxe<span class="text-blue-600">Stay</span>
+        </span>
+      </div>
+
+      <nav class="hidden md:flex space-x-8">
+        <a *ngFor="let item of navItems"
+
+           class="text-gray-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2">
+          <i [class]="item.icon"></i> {{ item.label }}
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-95">
+          <i class="fas fa-plus mr-2"></i> New Booking
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
