@@ -13,18 +13,33 @@
 
       <nav class="hidden md:flex space-x-8">
         <a *ngFor="let item of navItems"
-
-           class="text-gray-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2">
+                   class="text-gray-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2 cursor-pointer">
           <i [class]="item.icon"></i> {{ item.label }}
         </a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <button class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-95">
-          <i class="fas fa-plus mr-2"></i> New Booking
+      <div class="flex items-center gap-2 md:gap-4">
+        <button class="bg-blue-600 text-white px-4 md:px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-95">
+          <i class="fas fa-plus md:mr-2"></i>
+          <span class="hidden md:inline">New Booking</span>
+        </button>
+
+        <button (click)="toggleMenu()" class="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none">
+          <i class="fas" [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
         </button>
       </div>
 
+    </div>
+  </div>
+
+  <div *ngIf="isMenuOpen" class="md:hidden bg-white border-b border-gray-100">
+    <div class="px-4 pt-2 pb-6 space-y-1">
+      <a *ngFor="let item of navItems"
+         (click)="isMenuOpen = false"
+         class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl font-medium transition-all cursor-pointer">
+        <i [class]="item.icon + ' w-5 text-center'"></i>
+        {{ item.label }}
+      </a>
     </div>
   </div>
 </header>

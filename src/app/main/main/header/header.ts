@@ -8,12 +8,17 @@ import { NavItem } from './navItem.interface';
   styleUrl: './header.css',
 })
 export class Header {
+  isMenuOpen = false;
   navItems: NavItem[]=[
-    { label: 'Dashboard', link: '/dashboard', icon: 'fas fa-chart-line' },
+    // { label: 'Dashboard', link: '/dashboard', icon: 'fas fa-chart-line' },
     { label: 'Rooms', link: '/rooms', icon: 'fas fa-bed' },
     { label: 'Bookings', link: '/bookings', icon: 'fas fa-calendar-check' },
     { label: 'Staff', link: '/staff', icon: 'fas fa-users-cog' }
   ];
 
+  toggleMenu()
+  {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 }
