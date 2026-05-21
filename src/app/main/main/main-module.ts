@@ -4,18 +4,23 @@ import { RouterModule } from '@angular/router'; // Add this
 import { MainRoutingModule } from './main-routing-module';
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
+import { Dasboard } from './dasboard/dasboard';
 
 @NgModule({
-  declarations: [Footer, Header],
+  declarations: [
+    Footer,
+    Header,
+    Dasboard
+  ],
   imports: [
     CommonModule,
-    RouterModule, // Add this
+    RouterModule,
     MainRoutingModule
   ],
   exports: [
     Footer,
     Header,
-    RouterModule // Export this so app.html can use router-outlet and routerLink
+    RouterModule
   ]
 })
 export class MainModule {}
