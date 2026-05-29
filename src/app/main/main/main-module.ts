@@ -5,6 +5,7 @@ import { MainRoutingModule } from './main-routing-module';
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
 import { Dasboard } from './dasboard/dasboard';
+import { SharedModule } from '../../shared/shared-module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Dasboard } from './dasboard/dasboard';
   imports: [
     CommonModule,
     RouterModule,
-    MainRoutingModule
+    MainRoutingModule,
+    SharedModule
   ],
   exports: [
     Footer,
