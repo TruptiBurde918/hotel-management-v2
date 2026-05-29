@@ -9,6 +9,7 @@ import { NavItem } from './navItem.interface';
 })
 export class Header {
   isMenuOpen = false;
+  isBookingModalOpen = false;
   navItems: NavItem[]=[
     // { label: 'Dashboard', link: '/dashboard', icon: 'fas fa-chart-line' },
     { label: 'Rooms', link: '/rooms', icon: 'fas fa-bed' },
@@ -20,5 +21,7 @@ export class Header {
   {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
+  openBookingModal() {
+    this.isBookingModalOpen = !this.isBookingModalOpen;
+  }
 }
