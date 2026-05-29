@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
 
-      <div class="flex items-center gap-2 cursor-pointer">
+      <div class="flex items-center gap-2 cursor-pointer" routerLink="/dashboard">
         <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white">
           <i class="fas fa-hotel text-xl"></i>
         </div>
@@ -13,6 +13,8 @@
 
       <nav class="hidden md:flex space-x-8">
         <a *ngFor="let item of navItems"
+         [routerLink]="item.link"
+          routerLinkActive="text-blue-600 border-b-2 border-blue-600"
                    class="text-gray-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2 cursor-pointer">
           <i [class]="item.icon"></i> {{ item.label }}
         </a>
