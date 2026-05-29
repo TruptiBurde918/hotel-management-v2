@@ -6,12 +6,14 @@ import { Footer } from './footer/footer';
 import { Header } from './header/header';
 import { Dasboard } from './dasboard/dasboard';
 import { SharedModule } from '../../shared/shared-module';
+import { BookingModal } from './header/booking-modal/booking-modal/booking-modal';
 
 @NgModule({
   declarations: [
     Footer,
     Header,
-    Dasboard
+    Dasboard,
+    BookingModal
   ],
   imports: [
     CommonModule,
