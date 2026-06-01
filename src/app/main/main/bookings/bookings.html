@@ -1,0 +1,103 @@
+<main class="min-h-screen bg-gray-50 pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+      <div>
+        <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Booking Directory</h1>
+        <p class="text-gray-500 mt-1">View and manage all guest reservations</p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+          <input type="text"
+                 placeholder="Search guests..."
+                 class="pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none w-64 shadow-sm transition-all">
+        </div>
+        <button class="p-2.5 bg-white border border-gray-200 rounded-2xl text-gray-600 hover:text-blue-600 shadow-sm transition-all">
+          <i class="fas fa-filter"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-50/50 text-gray-500 text-xs uppercase font-bold tracking-wider">
+              <th class="px-6 py-5 border-b border-gray-100">Guest Details</th>
+              <th class="px-6 py-5 border-b border-gray-100">Room</th>
+              <th class="px-6 py-5 border-b border-gray-100">Check In/Out</th>
+              <th class="px-6 py-5 border-b border-gray-100">Status</th>
+              <th class="px-6 py-5 border-b border-gray-100">Total Amount</th>
+              <th class="px-6 py-5 border-b border-gray-100 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr *ngFor="let booking of bookings" class="hover:bg-gray-50/50 transition-colors group">
+              <td class="px-6 py-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 font-bold">
+                    {{ booking.guestName.charAt(0) }}
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-900">{{ booking.guestName }}</p>
+                    <p class="text-xs text-gray-500">{{ booking.email }}</p>
+                  </div>
+                </div>
+              </td>
+
+              <td class="px-6 py-5">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 bg-gray-100 rounded-lg text-xs font-bold text-gray-700">#{{ booking.roomNumber }}</span>
+                  <span class="text-sm text-gray-600">{{ booking.roomType }}</span>
+                </div>
+              </td>
+
+              <td class="px-6 py-5">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-medium text-gray-600">
+                    <i class="fas fa-sign-in-alt text-emerald-500"></i> {{ booking.checkIn }}
+                  </div>
+                  <div class="flex items-center gap-2 text-xs font-medium text-gray-600">
+                    <i class="fas fa-sign-out-alt text-rose-500"></i> {{ booking.checkOut }}
+                  </div>
+                </div>
+              </td>
+
+              <td class="px-6 py-5">
+                <span [class]="getStatusClass(booking.status)" class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                  {{ booking.status }}
+                </span>
+              </td>
+
+              <td class="px-6 py-5 font-black text-gray-900">
+                {{ booking.amount }}
+              </td>
+
+              <td class="px-6 py-5 text-right">
+                <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="p-2 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-all">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 flex justify-between items-center text-sm text-gray-500 font-medium">
+        <span>Showing 5 of 124 bookings</span>
+        <div class="flex gap-2">
+          <button class="px-4 py-1.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 disabled:opacity-50">Previous</button>
+          <button class="px-4 py-1.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-50">Next</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
