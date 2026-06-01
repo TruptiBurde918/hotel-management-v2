@@ -9,6 +9,7 @@ import { SharedModule } from '../../shared/shared-module';
 import { BookingModal } from './header/booking-modal/booking-modal/booking-modal';
 import { Rooms } from './rooms/rooms';
 import { Bookings } from './bookings/bookings';
+import { Staff } from './staff/staff';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Bookings } from './bookings/bookings';
     Dasboard,
     BookingModal,
     Rooms,
-    Bookings
+    Bookings,
+    Staff
   ],
   imports: [
     CommonModule,
