@@ -10,6 +10,7 @@ import { BookingModal } from './header/booking-modal/booking-modal/booking-modal
 import { Rooms } from './rooms/rooms';
 import { Bookings } from './bookings/bookings';
 import { Staff } from './staff/staff';
+import { AddStaffModal } from './staff/add-staff-modal/add-staff-modal';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { Staff } from './staff/staff';
     BookingModal,
     Rooms,
     Bookings,
-    Staff
+    Staff,
+    AddStaffModal
   ],
   imports: [
     CommonModule,
