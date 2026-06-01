@@ -8,6 +8,7 @@ import { StaffMember } from './interface/staff.interface';
   styleUrl: './staff.css',
 })
 export class Staff implements OnInit {
+  isAddStaffModalOpen = false;
     staffList: StaffMember[] = [
     { id: 'ST-101', name: 'Rahul Sharma', role: 'Front Desk Manager', department: 'Reception', shift: 'Morning', status: 'On Duty', email: 'rahul.s@luxestay.com', phone: '+91 98765 00101', image: 'https://i.pravatar.cc/150?u=rahul' },
     { id: 'ST-102', name: 'Priya Patel', role: 'Executive Chef', department: 'Kitchen', shift: 'Afternoon', status: 'On Duty', email: 'priya.p@luxestay.com', phone: '+91 98765 00102', image: 'https://i.pravatar.cc/150?u=priya' },
@@ -37,5 +38,8 @@ export class Staff implements OnInit {
       case 'Night': return 'fa-moon text-indigo-500';
       default: return 'fa-clock';
     }
+  }
+  openAddStaffModal() {
+    this.isAddStaffModalOpen = !this.isAddStaffModalOpen;
   }
 }
